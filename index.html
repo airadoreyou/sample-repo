@@ -1,11 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Group 2 | Innovative Minds</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom right, #f0f4f8, #dfe9f3);
+      color: #333;
+    }
+
+    header {
+      backdrop-filter: blur(10px);
+      background-color: rgba(26, 41, 128, 0.8);
+      padding: 20px 0;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #ffffff;
+      letter-spacing: 1px;
+    }
+
+    nav {
+      display: flex;
+      gap: 30px;
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.05rem;
+      position: relative;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background-color: #ffde59;
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ffde59;
+      text-shadow: 0 0 6px #ffde59;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    #about {
+      display: none;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+      padding: 40px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        gap: 15px;
+      }
+    }
+  </style>
 </head>
 <body>
-  
+
+  <header>
+    <div class="nav-container">
+      <div class="logo">Group 2 ✨</div>
+      <nav>
+        <a href="#" id="home-link">Home</a>
+        <a href="#" id="about-link">About</a> 
+        <a href="#projects">Projects</a>
+        <a href="#team">Team</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>
+      Welcome to Group 2 – Innovative Minds! We are a team of creative thinkers and problem solvers dedicated to delivering impactful and innovative projects. Our mission is to challenge norms, explore new ideas, and build solutions that make a difference.
+    </p>
+  </section>
+
+  <script>
+    const aboutSection = document.getElementById('about');
+
+    // Show About section when About link is clicked
+    document.getElementById('about-link').addEventListener('click', function (e) {
+      e.preventDefault();
+      aboutSection.style.display = 'block';
+      aboutSection.scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // Hide About section and scroll to top when Home link is clicked
+    document.getElementById('home-link').addEventListener('click', function (e) {
+      e.preventDefault();
+      aboutSection.style.display = 'none';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+
 </body>
 </html>
